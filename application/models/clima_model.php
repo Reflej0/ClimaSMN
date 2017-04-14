@@ -4,13 +4,13 @@ class clima_model extends CI_Model{
     
 function getclima($pais, $provincia, $division){ //Funcion que conecta con www.smn.gov.ar
 header("Content-Type: text/html; charset=ISO-8859-1"); // Necesario para visualizar ñ y acentos.
-if(!($provincia="Capital Federal")){ // Si es Capital Federal la URL es diferente.
+if($provincia=="Capital Federal"){ // Si es Capital Federal la URL es diferente.
     $url = "http://www.smn.gov.ar/?mod=pron&id=1";
 }
 else{
   $url = "http://www.smn.gov.ar/?mod=pron&id=4&provincia=".$provincia."&ciudad=".$division; //Construyo la busqueda basada en los datos.  
 }
-if($division="Haedo"){ //Para Haedo no existe, el mas cercano es Morón.
+if($provincia=="Buenos%20Aires" && $division=="Haedo"){ //Para Haedo no existe, el mas cercano es Morón.
     $url = "http://www.smn.gov.ar/?mod=pron&id=4&provincia=Buenos%20Aires&ciudad=Mor%F3n";
 }
 //Procedimientos utilizando curl para obtener el response de la pagina.
