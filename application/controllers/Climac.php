@@ -15,6 +15,8 @@ public function climaget(){
     $pais = $_POST['pais'];
     $provincia = $_POST['provincia'];
     $division = $_POST['division'];
+    $provincia = str_replace(" ","%20",$provincia); //Antes de pasar al modelo adapto el espacio de la geolocalizacion en un %20.
+    $division = str_replace(" ","%20",$division); //Antes de pasar al modelo adapto el espacio de la geolocalizacion en un %20.
     $response=$this->geografia->getclima($pais, $provincia, $division);
     echo $response; //El response lo recibe el success: function de la llamada de Ajax.
 }
