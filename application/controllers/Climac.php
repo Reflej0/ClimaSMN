@@ -5,7 +5,7 @@ class Climac extends CI_Controller {
     function __construct()
 {
    parent::__construct();
-   $this->load->model('clima_model', 'geografia');
+   $this->load->model('Clima_model', 'geografia');
 }
 
 public function index(){
@@ -15,8 +15,8 @@ public function climaget(){
     $pais = $_POST['pais'];
     $provincia = $_POST['provincia'];
     $division = $_POST['division'];
-    $provincia = str_replace(" ","%20",$provincia); //Antes de pasar al modelo adapto el espacio de la geolocalizacion en un %20.
-    $division = str_replace(" ","%20",$division); //Antes de pasar al modelo adapto el espacio de la geolocalizacion en un %20.
+    $provincia = $this->geografia->adecuartexto($provincia); // Adecuo los caracteres especiales.
+    $division = $this->geografia->adecuartexto($division); // Adecuo los caracteres especiales.
     $response=$this->geografia->getclima($pais, $provincia, $division);
     echo $response; //El response lo recibe el success: function de la llamada de Ajax.
 }
