@@ -18,10 +18,10 @@ Versión ONLINE
 La versión online esta alojada en: http://reflejo.epizy.com/Clima/
 
 *******************
-Problemas a Solucionar
+Ciudades Testeadas
 *******************
 
-Hacer posible la geolocalización en redes celulares y aproximar el pronóstico según la zona.
+Las siguientes ciudades han sido testeadas mediante proxys y funcionan: Haedo(Gran Buenos Aires), Moron(Gran Buenos Aires), CABA, Córdoba(capital), Goya(Corrientes), Mendoza(capital), Neúquen(capital), Sunchales(Santa Fe).
 
 *******
 Contacto
